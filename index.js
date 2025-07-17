@@ -9,7 +9,7 @@ const routes = {
   "/": "index.html",
   "/about": "about.html",
   "/contact-me": "contact-me.html",
-  "/styles.css": "styles.css"
+  "/styles.css": "styles.css",
 };
 
 const filePath = join(__dirname, "/about.html");
@@ -21,9 +21,9 @@ const server = createServer((req, res) => {
   if (routes[url]) {
     const filePath = join(__dirname, routes[url]);
 
-    let contentType = "text/html"
-    if (extname(filePath) === ".css"){
-      contentType = "text/css"
+    let contentType = "text/html";
+    if (extname(filePath) === ".css") {
+      contentType = "text/css";
     }
 
     readFile(filePath, (err, data) => {
